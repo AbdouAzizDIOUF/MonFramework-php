@@ -21,8 +21,8 @@ class AdminModule extends Module
 
         //$container->get(RendererInterface::class)->addPath('admin', dirname(__DIR__, 2) . '/views/admin');
 
-        $container->get(Router::class)->crud("$prefix", AdminAcceuilController::class, 'blog.admin');
-        $container->get(Router::class)->crud("$prefix/posts", AdminPostController::class, 'blog.post.admin');
-        $container->get(Router::class)->crud("$prefix/categories", AdminCategoryController::class, 'blog.category.admin');
+        $container->get(Router::class)->addRouteAdmin("$prefix", AdminAcceuilController::class, 'blog.admin');
+        $container->get(Router::class)->addRouteAdmin("$prefix/posts", AdminPostController::class, 'blog.post.admin');
+        $container->get(Router::class)->addRouteAdmin("$prefix/categories", AdminCategoryController::class, 'blog.category.admin');
     }
 }

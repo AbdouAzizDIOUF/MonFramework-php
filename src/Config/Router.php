@@ -59,7 +59,7 @@ class Router
      * @param $callable
      * @param string $prefixName
      */
-    public function crud(string $prefixPath, $callable, string $prefixName): void
+    public function addRouteAdmin(string $prefixPath, $callable, string $prefixName): void
     {
         $this->addRoute((string)$prefixPath, $callable, "$prefixName.index");
         $this->addRoute("$prefixPath/new", $callable, "$prefixName.create");
