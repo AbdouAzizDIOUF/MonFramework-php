@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4">
+    {{ field('name', item.name, "Titre de l'article") }}
+  </div>
+  <div class="col-md-4">
+    {{ field('category_id', item.category_id, "Catégorie", {options: categories}) }}
+  </div>
+  <div class="col-md-4">
+    {{ field('slug', item.slug, "Lien") }}
+  </div>
+</div>
+{{ field('content', item.content, "content", {type: 'textarea'}) }}
+{{ field('created_at', item.created_at, "Date de création", {class: 'datepicker'}) }}

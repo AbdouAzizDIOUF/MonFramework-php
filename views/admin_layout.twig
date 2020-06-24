@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>{% block title "Mon site " %}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/3.0.7/flatpickr.css">
+  <style>
+    body {
+      padding-top: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" href="{{ path('blog.admin.index') }}">Administration</a>
+  <ul class="nav navbar-nav">
+  </ul>
+</nav>
+
+<div class="container">
+
+  {% if flash('success') %}
+    <div class="alert alert-success">
+      {{ flash('success') }}
+    </div>
+  {% endif %}
+
+  {% if flash('error') %}
+    <div class="alert alert-danger">
+      {{ flash('error') }}
+    </div>
+  {% endif %}
+
+  {% block body %}{% endblock %}
+
+</div><!-- /.container -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/3.0.7/flatpickr.js"></script>
+<script>
+  flatpickr('.datepicker', {
+    enableTime: true,
+    altInput: true,
+    altFormat: 'j F Y, H:i',
+    dateFormat: 'Y-m-d H:i:S'
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+1°)/var/www/html/MonFramwork$ php -S localhost:80 -d display_errors=1 -t public/
+
+
+********************************************************************************
+********************   QUELQUES COMMANDES GIT       ****************************
+********************************************************************************
+
+git commit --amend -m "Message de commit mis à jour" ==> permet de modifier le message du dernier commit
+

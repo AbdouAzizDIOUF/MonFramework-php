@@ -1,0 +1,28 @@
+{% extends 'admin_layout.twig' %}
+
+{% block title "Page d'acceuil de l'administration" %}
+
+{% block body %}
+
+            <div class="card card-register mx-auto mt-7 mb-5">
+                <div class="card-header text-center">ESPACE ADMINISTRATION</div>
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-lg-6 mt-10">
+                            <a href="{{ path('blog.post.admin.index') }}" class="btn btn-success btn-large btn-block"
+                               style="border-radius: 50px !important; " >
+                                <i class="fa fa-user fa-4x"></i><br>GESTION DES ARTICLES
+                            </a>
+                        </div>
+                        <div class="col-lg-6 mt-5">
+                            <a href="{{ path('blog.category.admin.index') }}" class="btn btn-warning btn-large btn-block"
+                               style="border-radius: 50px !important; " >
+                                <i class="fa fa-user fa-4x"></i><br>GESTION DES CATEGORIES
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- /.page content -->
+
+{% endblock %}

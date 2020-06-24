@@ -1,0 +1,5 @@
+.idea
+lsp
+composer.lock
+
+/vendor/

@@ -1,0 +1,106 @@
+***********************************************************************************************8
+                Demarrage du serveur
+************************************************************************************************
+
+-> php -S localhost:8000 -d display_errors=1 -t "dossier ou se trouve le index.php" : Ceci permet d'avoir les erreurs sur le navigateur
+			ex: php -S localhost:8080 -d display_errors=1 -t public/
+
+-> git reset --hard HEAD : permet de recuperrer les fichier supprimer
+
+Le PSR c'est l'organisme qui est chargé des standards pour PHP et la compatiblité entre les framework
+
+
+*********************************************************************************************************
+                                     COMPOSER
+*********************************************************************************************************
+-> composer init: permet la configuration de votre projet		version:
+
+-> composer require --dev phpunit/phpunit: gere les differents dependences		version:
+
+-> composer dump-autoload : charge l'autoload
+
+-> composer update: permet la mise a jour du composer
+
+
+
+
+-> ./vendor/bin/phpunit +chemin : permet d'effectuer des tests
+
+
+***************************************************************************************************************8
+                    Les librairies installes
+****************************************************************************************************************
+
+	1°) Le package guzzlehttp/psr7 gere "requetes && les reponses"
+
+		-> composer require guzzlehttp/psr7		version:
+
+	2°) le package http-interop/response-sender "Les affichages"
+
+		-> composer require http-interop/response-sender		version:
+
+	3°) package squizlabs/php_codesniffer :  gestion des erreurs liés a notre code de maniére generale
+
+		-> composer require squizlabs/php_codesniffer		version:
+
+		-> commande de verification des erreurs: ./vendor/bin/phpcs "+ chemin du dossier à tester"		version:
+
+		-> phpcbf : permet de corriger l'ensemble des erreurs liés a notre code		version:
+
+	4°) le package zendframework/zend-expressive-fastroute : permet de matcher(un ensemble de combinaisons differentes pour faire correspondre les demande entrantes au itinéraires) les rêquettes
+		-> composer require zendframework/zend-expressive-fastroute		version:
+
+	5°) le package twig/twig: c'est un moteur de template. (il permet une meilleure presentation du code, moin dépendant de php);
+
+		-> composer require twig/twig		version:
+
+	6°) le package PHP-DI/PHP-DI: c'est un conteneur de dependance et capable de gerer la factory
+
+		-> composer require PHP-DI/PHP-DI		version:
+
+
+
+            ****************************************************************
+            *                                                              *
+            *   Systeme de migration de la base de donnees avec Phinx      *
+            *                                                              *
+            ****************************************************************
+
+	7°) le librery robmorgan/phinx" est un outil de migration de base de données simple et tres efficasse
+
+		-> composer require robmorgan/phinx		version:
+
+        -> vendor/bin/phinx init . // permet d'initialiser phinx et creer un fichier phinx.yml "fichier de configuration de la base de donnees"
+
+        -> vendor/bin/phinx migrate // effectue la migration
+
+        -> vendor/bin/phinx create CreatePosteTable   // Creation de la table CreatePosteTable
+ 
+        -> vendor/bin/phinx seed:create PostSeeder // creation du fichier(PostSeeder.php) d'interaction avec la base de donnees (manipulation de donnees de la base)
+ 
+        -> vendor/bin/phinx seed:run //permet de lancer PostSeeder.php
+
+        -> vendor/bin/phinx create AddCategorieTable
+
+
+
+
+
+
+
+
+	8°) le librairy fzaninotto/faker: il permet de travailer avec des données deja en place en interaction avec la base depuis le "phinx"
+
+		-> composer require fzaninotto/faker    version:
+
+
+	9°) le librairy pagerfanta/pagerfanta // permet de faire la pagination
+
+	        -> composer require pagerfanta/pagerfanta;
+
+
+
+
+
+
+
